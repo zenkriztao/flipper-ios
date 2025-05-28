@@ -17,8 +17,8 @@ struct ArchivedItemEntity: AppEntity {
 
     var displayRepresentation: DisplayRepresentation {
         return DisplayRepresentation(
-            title: "\(name)",
-            subtitle: "\(subtitle)",
+            title: name,
+            subtitle: subtitle,
             image: .init(named: image, isTemplate: true)
         )
     }
@@ -28,21 +28,21 @@ struct ArchivedItemEntity: AppEntity {
 extension ArchivedItemEntity {
     private var subtitle: String {
         switch kind {
-        case .subghz: "Sub-GHz"
-        case .rfid: "Rfid"
-        case .nfc: "NFC"
-        case .infrared: "IR"
-        case .ibutton: "iButton"
+        case .subghz: return "Sub-GHz"
+        case .rfid: return "RFID"
+        case .nfc: return "NFC"
+        case .infrared: return "IR"
+        case .ibutton: return "iButton"
         }
     }
 
     private var image: String {
         switch kind {
-        case .subghz: "subghz"
-        case .rfid: "rfid"
-        case .nfc: "nfc"
-        case .infrared: "infrared"
-        case .ibutton: "ibutton"
+        case .subghz: return "subghz"
+        case .rfid: return "rfid"
+        case .nfc: return "nfc"
+        case .infrared: return "infrared"
+        case .ibutton: return "ibutton"
         }
     }
 }
